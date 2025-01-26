@@ -1,0 +1,16 @@
+/* bug.css - Incorrect usage of calc() */
+.incorrect {
+  width:calc(100%+20px);/*Inconsistent Units*/
+  height: calc(20px+10);/*Missing Unit*/
+  margin: calc(calc(10px + 5px)+10px); /*Nested too Deep*/
+  padding: calc(5em+2vw); /*Unsupported units in some browsers*/
+}
+
+/* bugSolution.css - Corrected usage of calc() */
+.correct {
+  width:calc(100% + 20px); /*Consistent unit px*/
+  height: calc(20px + 10px);/*Added Unit*/
+  margin:calc(25px + 10px); /*Simplified nested expression*/
+  padding: calc(5em + 2vw);/* Use a fallback for older browser support*/
+}
+/*Note: Older browsers might still have limited calc() support*/
